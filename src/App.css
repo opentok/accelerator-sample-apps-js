@@ -148,19 +148,25 @@ body {
     display: none;
 }
 
-.App-video-container .video-container.active-2 .OT_subscriber {
-    width: 50%;
+.App-video-container .video-container.active-gt2 {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   height: 100%;
+   width: 100%;
 }
 
-.App-video-container .video-container.active-3 .OT_subscriber {
-    width: calc(100%/3) !important;
+.App-video-container .video-container.active-gt2 .OT_subscriber {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 0;
+  flex-basis: 50%;
+  box-sizing: border-box;
+  width: auto!important;
+  height: auto!important;
 }
 
-.App-video-container .video-container.active-4 {
-    flex-wrap: wrap;
-}
-
-.App-video-container .video-container.active-4 .OT_subscriber {
-    width: 50% !important;
-    height: 50% !important;
+.App-video-container .video-container.active-gt2.odd .OT_subscriber:first-child {
+    flex-basis: 100%;
 }

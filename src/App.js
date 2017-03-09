@@ -76,6 +76,8 @@ const containerClasses = (state) => {
   const sharingScreen = meta ? !!meta.publisher.screen : false;
   const viewingSharedScreen = meta ? meta.subscriber.screen : false;
   const activeCameraSubscribers = meta ? meta.subscriber.camera : 0;
+  var active_gt2 =  (activeCameraSubscribers > 2)
+  var active_odd = (activeCameraSubscribers % 2)
   return {
     controlClass: classNames('App-control-container', { 'hidden': !active }),
     localAudioClass: classNames('ots-video-control circle audio', { 'muted': !localAudioEnabled }),
@@ -83,7 +85,7 @@ const containerClasses = (state) => {
     cameraPublisherClass: classNames('video-container', { 'hidden': !active, 'small': !!activeCameraSubscribers || sharingScreen, 'left': sharingScreen || viewingSharedScreen }),
     screenPublisherClass: classNames('video-container', { 'hidden': !sharingScreen }),
     cameraSubscriberClass: classNames('video-container', { 'hidden': !activeCameraSubscribers },
-      `active-${activeCameraSubscribers}`, { 'small': viewingSharedScreen || sharingScreen }
+      {'active-gt2': active_gt2}, {'odd': active_odd}, { 'small': viewingSharedScreen || sharingScreen }
     ),
     screenSubscriberClass: classNames('video-container', { 'hidden': !viewingSharedScreen }),
   };
