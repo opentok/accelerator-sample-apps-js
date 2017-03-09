@@ -1,0 +1,26 @@
+{
+  "name": "sample-app",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "*"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "opentok-annotation": "*",
+    "opentok-archiving": "*",
+    "opentok-screen-sharing": "*",
+    "opentok-solutions-css": "*",
+    "opentok-text-chat": "*",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-spinner": "^0.2.6",
+    "babel-polyfill": "^6.23.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
