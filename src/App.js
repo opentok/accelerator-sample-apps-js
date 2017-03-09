@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Spinner from 'react-spinner';
 import classNames from 'classnames';
 import logo from './logo.svg';
-import otCore from './ot-core/core.js';
+import otCore from 'opentok-accelerator-core';
 import config from './config.json';
 import './App.css';
 import 'opentok-solutions-css';
