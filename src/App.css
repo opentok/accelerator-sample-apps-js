@@ -121,6 +121,17 @@ body {
     border: 1px solid white;
     padding: 20px 40px;
     border-radius: 6px;
+    background-color: Transparent;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+.App-mask .message.button:focus:active,  .message.button:focus, .message.button:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .App-video-container .video-container {
@@ -167,6 +178,6 @@ body {
   height: auto!important;
 }
 
-.App-video-container .video-container.active-gt2.odd .OT_subscriber:first-child {
+.App-video-container .video-container.active-gt2.active-odd .OT_subscriber:first-child {
     flex-basis: 100%;
 }
