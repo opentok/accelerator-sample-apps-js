@@ -1,13 +1,15 @@
-/* eslint-disable */
 /* Let CRA handle linting for sample app */
 import React, { Component } from 'react';
 import Spinner from 'react-spinner';
 import classNames from 'classnames';
+
+import otCore from 'opentok-accelerator-core';
+import 'opentok-solutions-css';
+
 import logo from './logo.svg';
-import otCore from './ot-core/core.js';
 import config from './config.json';
 import './App.css';
-import 'opentok-solutions-css';
+
 
 const otCoreOptions = {
   credentials: {
@@ -16,7 +18,7 @@ const otCoreOptions = {
     token: config.token,
   },
   // A container can either be a query selector or an HTML Element
-  streamContainers(pubSub, type, data, streamId){
+  streamContainers(pubSub, type, data, streamId) {
     return {
       publisher: {
         camera: '#cameraPublisherContainer',
@@ -34,7 +36,7 @@ const otCoreOptions = {
     callProperites: null, // Using default
   },
   textChat: {
-    name: ['David', 'Paul', 'Emma', 'George', 'Amanda'][Math.random() * 5 | 0],
+    name: ['David', 'Paul', 'Emma', 'George', 'Amanda'][Math.random() * 5 | 0], // eslint-disable-line no-bitwise
     waitingMessage: 'Messages will be delivered when other users arrive',
     container: '#chat',
   },
@@ -76,16 +78,21 @@ const containerClasses = (state) => {
   const sharingScreen = meta ? !!meta.publisher.screen : false;
   const viewingSharedScreen = meta ? meta.subscriber.screen : false;
   const activeCameraSubscribers = meta ? meta.subscriber.camera : 0;
+  const activeCameraSubscribersGt2 = activeCameraSubscribers > 2;
+  const activeCameraSubscribersOdd = activeCameraSubscribers % 2;
+  const screenshareActive = viewingSharedScreen || sharingScreen;
   return {
-    controlClass: classNames('App-control-container', { 'hidden': !active }),
-    localAudioClass: classNames('ots-video-control circle audio', { 'muted': !localAudioEnabled }),
-    localVideoClass: classNames('ots-video-control circle video', { 'muted': !localVideoEnabled }),
-    cameraPublisherClass: classNames('video-container', { 'hidden': !active, 'small': !!activeCameraSubscribers || sharingScreen, 'left': sharingScreen || viewingSharedScreen }),
-    screenPublisherClass: classNames('video-container', { 'hidden': !sharingScreen }),
-    cameraSubscriberClass: classNames('video-container', { 'hidden': !activeCameraSubscribers },
-      `active-${activeCameraSubscribers}`, { 'small': viewingSharedScreen || sharingScreen }
+    controlClass: classNames('App-control-container', { hidden: !active }),
+    localAudioClass: classNames('ots-video-control circle audio', { muted: !localAudioEnabled }),
+    localVideoClass: classNames('ots-video-control circle video', { muted: !localVideoEnabled }),
+    cameraPublisherClass: classNames('video-container', { hidden: !active, small: !!activeCameraSubscribers || sharingScreen, left: screenshareActive }),
+    screenPublisherClass: classNames('video-container', { hidden: !sharingScreen }),
+    cameraSubscriberClass: classNames('video-container', { hidden: !activeCameraSubscribers },
+      { 'active-gt2': activeCameraSubscribersGt2 && !screenshareActive },
+      { 'active-odd': activeCameraSubscribersOdd && !screenshareActive },
+      { small: screenshareActive }
     ),
-    screenSubscriberClass: classNames('video-container', { 'hidden': !viewingSharedScreen }),
+    screenSubscriberClass: classNames('video-container', { hidden: !viewingSharedScreen }),
   };
 };
 
@@ -97,7 +104,7 @@ const connectingMask = () =>
 
 const startCallMask = start =>
   <div className="App-mask">
-    <div className="message button clickable" onClick={start}>Click to Start Call</div>
+    <button className="message button clickable" onClick={start}>Click to Start Call </button>
   </div>;
 
 class App extends Component {
@@ -171,19 +178,19 @@ class App extends Component {
           <h1>OpenTok Accelerator Core</h1>
         </div>
         <div className="App-main">
-          <div id="controls" className={controlClass}>
-            <div className={localAudioClass} onClick={this.toggleLocalAudio}></div>
-            <div className={localVideoClass} onClick={this.toggleLocalVideo}></div>
-          </div>
           <div className="App-video-container">
             { !connected && connectingMask() }
             { connected && !active && startCallMask(this.startCall)}
-            <div id="cameraPublisherContainer" className={cameraPublisherClass}></div>
-            <div id="screenPublisherContainer" className={screenPublisherClass}></div>
-            <div id="cameraSubscriberContainer" className={cameraSubscriberClass}></div>
-            <div id="screenSubscriberContainer" className={screenSubscriberClass}></div>
+            <div id="cameraPublisherContainer" className={cameraPublisherClass} />
+            <div id="screenPublisherContainer" className={screenPublisherClass} />
+            <div id="cameraSubscriberContainer" className={cameraSubscriberClass} />
+            <div id="screenSubscriberContainer" className={screenSubscriberClass} />
           </div>
-          <div id="chat" className="App-chat-container"></div>
+          <div id="controls" className={controlClass}>
+            <div className={localAudioClass} onClick={this.toggleLocalAudio} />
+            <div className={localVideoClass} onClick={this.toggleLocalVideo} />
+          </div>
+          <div id="chat" className="App-chat-container" />
         </div>
       </div>
     );

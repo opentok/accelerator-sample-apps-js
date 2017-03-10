@@ -40,14 +40,10 @@ body {
 }
 
 .App-control-container {
-    position: absolute;
-    height: 100%;
-    width: 60px;
-    left: -60px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .App-control-container.hidden {
@@ -121,6 +117,17 @@ body {
     border: 1px solid white;
     padding: 20px 40px;
     border-radius: 6px;
+    background-color: Transparent;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+.App-mask .message.button:focus:active,  .message.button:focus, .message.button:active {
+  background-image: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .App-video-container .video-container {
@@ -148,19 +155,25 @@ body {
     display: none;
 }
 
-.App-video-container .video-container.active-2 .OT_subscriber {
-    width: 50%;
+.App-video-container .video-container.active-gt2 {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   height: 100%;
+   width: 100%;
 }
 
-.App-video-container .video-container.active-3 .OT_subscriber {
-    width: calc(100%/3) !important;
+.App-video-container .video-container.active-gt2 .OT_subscriber {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 0;
+  flex-basis: 50%;
+  box-sizing: border-box;
+  width: auto!important;
+  height: auto!important;
 }
 
-.App-video-container .video-container.active-4 {
-    flex-wrap: wrap;
-}
-
-.App-video-container .video-container.active-4 .OT_subscriber {
-    width: 50% !important;
-    height: 50% !important;
+.App-video-container .video-container.active-gt2.active-odd .OT_subscriber:first-child {
+    flex-basis: 100%;
 }
