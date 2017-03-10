@@ -1,4 +1,3 @@
-/* eslint-disable */
 /* Let CRA handle linting for sample app */
 import React, { Component } from 'react';
 import Spinner from 'react-spinner';
