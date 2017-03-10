@@ -1,9 +1,8 @@
 # OpenTok Accelerator Sample App for JavaScript React
-## Quick start
-
-
 [![GitHub release](https://img.shields.io/github/release/opentok/accelerator-sample-apps-js.svg)](./README.md)
 [![license](https://img.shields.io/github/license/opentok/accelerator-sample-apps-js.svg)](./LICENSE)
+
+## Quick start
 
 
 ###Configuration
@@ -29,3 +28,9 @@ This sample application was built with [Create React App](https://github.com/fac
 $ npm install
 $ npm run start
 ```
+
+
+----------
+
+
+*Looking for a sample in plain JavaScript? Click [here](https://github.com/opentok/accelerator-core-js/tree/master/vanilla-js-sample-app).*
