@@ -178,10 +178,6 @@ class App extends Component {
           <h1>OpenTok Accelerator Core</h1>
         </div>
         <div className="App-main">
-          <div id="controls" className={controlClass}>
-            <div className={localAudioClass} onClick={this.toggleLocalAudio} />
-            <div className={localVideoClass} onClick={this.toggleLocalVideo} />
-          </div>
           <div className="App-video-container">
             { !connected && connectingMask() }
             { connected && !active && startCallMask(this.startCall)}
@@ -189,6 +185,10 @@ class App extends Component {
             <div id="screenPublisherContainer" className={screenPublisherClass} />
             <div id="cameraSubscriberContainer" className={cameraSubscriberClass} />
             <div id="screenSubscriberContainer" className={screenSubscriberClass} />
+          </div>
+          <div id="controls" className={controlClass}>
+            <div className={localAudioClass} onClick={this.toggleLocalAudio} />
+            <div className={localVideoClass} onClick={this.toggleLocalVideo} />
           </div>
           <div id="chat" className="App-chat-container" />
         </div>
