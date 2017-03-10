@@ -26,3 +26,7 @@ This sample application was built with [Create React App](https://github.com/fac
 $ npm install
 $ npm run start
 ```
+
+----------
+
+*Looking for a sample in plain JavaScript? Click [here](https://github.com/opentok/accelerator-core-js/tree/master/vanilla-js-sample-app).*
