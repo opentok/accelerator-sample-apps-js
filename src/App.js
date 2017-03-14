@@ -83,11 +83,12 @@ const containerClasses = (state) => {
   const screenshareActive = viewingSharedScreen || sharingScreen;
   return {
     controlClass: classNames('App-control-container', { hidden: !active }),
-    localAudioClass: classNames('ots-video-control circle audio', { muted: !localAudioEnabled }),
-    localVideoClass: classNames('ots-video-control circle video', { muted: !localVideoEnabled }),
+    localAudioClass: classNames('ots-video-control circle audio', { hidden: !active, muted: !localAudioEnabled }),
+    localVideoClass: classNames('ots-video-control circle video', { hidden: !active, muted: !localVideoEnabled }),
+    localCallClass: classNames('ots-video-control circle end-call', { hidden: !active }),
     cameraPublisherClass: classNames('video-container', { hidden: !active, small: !!activeCameraSubscribers || sharingScreen, left: screenshareActive }),
-    screenPublisherClass: classNames('video-container', { hidden: !sharingScreen }),
-    cameraSubscriberClass: classNames('video-container', { hidden: !activeCameraSubscribers },
+    screenPublisherClass: classNames('video-container', { hidden: !active || !sharingScreen }),
+    cameraSubscriberClass: classNames('video-container', { hidden: !active || !activeCameraSubscribers },
       { 'active-gt2': activeCameraSubscribersGt2 && !screenshareActive },
       { 'active-odd': activeCameraSubscribersOdd && !screenshareActive },
       { small: screenshareActive }
@@ -121,6 +122,7 @@ class App extends Component {
       localVideoEnabled: true,
     };
     this.startCall = this.startCall.bind(this);
+    this.endCall = this.endCall.bind(this);
     this.toggleLocalAudio = this.toggleLocalAudio.bind(this);
     this.toggleLocalVideo = this.toggleLocalVideo.bind(this);
   }
@@ -149,6 +151,11 @@ class App extends Component {
       }).catch(error => console.log(error));
   }
 
+  endCall() {
+    otCore.endCall()
+    this.setState({ active: false });
+  }
+
   toggleLocalAudio() {
     otCore.toggleLocalAudio(!this.state.localAudioEnabled);
     this.setState({ localAudioEnabled: !this.state.localAudioEnabled });
@@ -164,6 +171,7 @@ class App extends Component {
     const {
       localAudioClass,
       localVideoClass,
+      localCallClass,
       controlClass,
       cameraPublisherClass,
       screenPublisherClass,
@@ -189,6 +197,7 @@ class App extends Component {
           <div id="controls" className={controlClass}>
             <div className={localAudioClass} onClick={this.toggleLocalAudio} />
             <div className={localVideoClass} onClick={this.toggleLocalVideo} />
+            <div className={localCallClass} onClick={this.endCall} />
           </div>
           <div id="chat" className="App-chat-container" />
         </div>
