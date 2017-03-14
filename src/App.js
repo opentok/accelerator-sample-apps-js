@@ -31,7 +31,7 @@ const otCoreOptions = {
     }[pubSub][type];
   },
   controlsContainer: '#controls',
-  packages: ['textChat', 'screenSharing', 'annotation', 'archiving'],
+  packages: ['textChat', 'screenSharing', 'annotation'],
   communication: {
     callProperites: null, // Using default
   },
@@ -62,10 +62,6 @@ const otCoreOptions = {
       publisher: '.App-video-container',
       subscriber: '.App-video-container'
     }
-  },
-  archiving: {
-    startURL: 'https://example.com/startArchive',
-    stopURL: 'https://example.com/stopArchive',
   },
 };
 
