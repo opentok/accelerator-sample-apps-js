@@ -82,14 +82,14 @@ const containerClasses = (state) => {
     localAudioClass: classNames('ots-video-control circle audio', { hidden: !active, muted: !localAudioEnabled }),
     localVideoClass: classNames('ots-video-control circle video', { hidden: !active, muted: !localVideoEnabled }),
     localCallClass: classNames('ots-video-control circle end-call', { hidden: !active }),
-    cameraPublisherClass: classNames('video-container', { hidden: !active, small: !!activeCameraSubscribers || sharingScreen, left: screenshareActive }),
+    cameraPublisherClass: classNames('video-container', { hidden: !active, small: !!activeCameraSubscribers || screenshareActive, left: screenshareActive }),
     screenPublisherClass: classNames('video-container', { hidden: !active || !sharingScreen }),
     cameraSubscriberClass: classNames('video-container', { hidden: !active || !activeCameraSubscribers },
       { 'active-gt2': activeCameraSubscribersGt2 && !screenshareActive },
       { 'active-odd': activeCameraSubscribersOdd && !screenshareActive },
       { small: screenshareActive }
     ),
-    screenSubscriberClass: classNames('video-container', { hidden: !viewingSharedScreen }),
+    screenSubscriberClass: classNames('video-container', { hidden: !viewingSharedScreen || !active }),
   };
 };
 
