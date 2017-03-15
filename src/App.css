@@ -80,6 +80,12 @@ body {
     background-image: url(https://assets.tokbox.com/solutions/images/icon-no-video.png);
 }
 
+.App-control-container .ots-video-control.end-call {
+    background-image: url(https://assets.tokbox.com/solutions/images/icon-hang-up.png);
+    background-color: red;
+}
+
+
 .App-video-container {
     position: relative;
     width: 100%;
@@ -161,6 +167,10 @@ body {
    flex-wrap: wrap;
    height: 100%;
    width: 100%;
+}
+
+.App-video-container .video-container.active-gt2.hidden {
+   display: none;
 }
 
 .App-video-container .video-container.active-gt2 .OT_subscriber {
