@@ -1,4 +1,4 @@
-##React Sample Application
+## React Sample Application
 
 Add a `credentials.json` file with your OpenTok credentials to the `src` directory:
 ```javascript

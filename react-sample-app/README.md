@@ -8,7 +8,7 @@ This document shows you how to prepare and run the sample application. The app i
  - [Screen Sharing](https://www.npmjs.com/package/opentok-screen-sharing)
  - [Annotation](https://www.npmjs.com/package/opentok-annotation)
 
-###Configuration
+### Configuration
 
 Add a `config.json` file with your OpenTok credentials to the `src` directory:
 ```javascript
