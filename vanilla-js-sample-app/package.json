@@ -1,0 +1,16 @@
+{
+  "name": "vanilla-js-sample-app",
+  "version": "1.0.0",
+  "description": "OpenTok Accelerator Core Vanilla JS Sample Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "adrice727@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1"
+  }
+}
