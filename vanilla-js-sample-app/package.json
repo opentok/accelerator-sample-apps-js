@@ -8,7 +8,7 @@
     "start": "node server.js",
     "cp-annotation": "cp node_modules/opentok-annotation/dist/opentok-annotation.js public/js/components/",
     "cp-archiving": "cp node_modules/opentok-archiving/dist/opentok-archiving.js public/js/components/",
-    "cp-screen-sharing":"cp node_modules/opentok-screen-sharing/dist/opentok-screen-sharing.js public/js/components/",
+    "cp-screen-sharing": "cp node_modules/opentok-screen-sharing/dist/opentok-screen-sharing.js public/js/components/",
     "cp-text-chat": "cp node_modules/opentok-text-chat/dist/opentok-text-chat.js public/js/components/",
     "cp-logging": "cp node_modules/opentok-solutions-logging/dist/opentok-solutions-logging.js public/js/components/",
     "cp-core": "cp node_modules/opentok-accelerator-core/browser/opentok-acc-core.js public/js/components/",
@@ -25,5 +25,12 @@
     "opentok-screen-sharing": "*",
     "opentok-solutions-css": "*",
     "opentok-text-chat": "*"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
   }
 }
