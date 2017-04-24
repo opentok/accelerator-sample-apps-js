@@ -1,5 +1,6 @@
-/* global otCore */
+/* global AccCore */
 
+let otCore;
 const options = {
   // A container can either be a query selector or an HTMLElement
   streamContainers: function streamContainers(pubSub, type, data) {
@@ -175,7 +176,7 @@ const app = () => {
    * Initialize otCore, connect to the session, and listen to events
    */
   const init = () => {
-    otCore.init(options);
+    otCore = new AccCore(options);
     otCore.connect().then(() => updateState({ connected: true }));
     createEventListeners();
   };
