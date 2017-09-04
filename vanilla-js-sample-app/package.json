@@ -12,7 +12,8 @@
     "cp-text-chat": "cp node_modules/opentok-text-chat/dist/opentok-text-chat.js public/js/components/",
     "cp-logging": "cp node_modules/opentok-solutions-logging/dist/opentok-solutions-logging.js public/js/components/",
     "cp-core": "cp node_modules/opentok-accelerator-core/browser/opentok-acc-core.js public/js/components/",
-    "build": "mkdir -p public/js/components && npm run cp-annotation && npm run cp-archiving && npm run cp-screen-sharing && npm run cp-text-chat && npm run cp-logging && npm run cp-core"
+    "mkdir": "mkdir -p public/js/components",
+    "build": "npm-run-all mkdir cp-annotation cp-archiving cp-screen-sharing cp-text-chat cp-logging cp-core"
   },
   "author": "adrice727@gmail.com",
   "license": "MIT",
@@ -31,6 +32,7 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "npm-run-all": "^4.1.1"
   }
 }
