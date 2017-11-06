@@ -6,13 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "cp-annotation": "cp node_modules/opentok-annotation/dist/opentok-annotation.js public/js/components/",
-    "cp-archiving": "cp node_modules/opentok-archiving/dist/opentok-archiving.js public/js/components/",
-    "cp-screen-sharing": "cp node_modules/opentok-screen-sharing/dist/opentok-screen-sharing.js public/js/components/",
-    "cp-text-chat": "cp node_modules/opentok-text-chat/dist/opentok-text-chat.js public/js/components/",
-    "cp-logging": "cp node_modules/opentok-solutions-logging/dist/opentok-solutions-logging.js public/js/components/",
-    "cp-core": "cp node_modules/opentok-accelerator-core/browser/opentok-acc-core.js public/js/components/",
-    "build": "mkdir -p public/js/components && npm run cp-annotation && npm run cp-archiving && npm run cp-screen-sharing && npm run cp-text-chat && npm run cp-logging && npm run cp-core"
+    "cp-annotation": "ncp node_modules/opentok-annotation/dist/opentok-annotation.js public/js/components/",
+    "cp-archiving": "ncp node_modules/opentok-archiving/dist/opentok-archiving.js public/js/components/",
+    "cp-screen-sharing": "ncp node_modules/opentok-screen-sharing/dist/opentok-screen-sharing.js public/js/components/",
+    "cp-text-chat": "ncp node_modules/opentok-text-chat/dist/opentok-text-chat.js public/js/components/",
+    "cp-logging": "ncp node_modules/opentok-solutions-logging/dist/opentok-solutions-logging.js public/js/components/",
+    "cp-core": "ncp node_modules/opentok-accelerator-core/browser/opentok-acc-core.js public/js/components/",
+    "build": "mkdirp public/js/components && npm run cp-annotation && npm run cp-archiving && npm run cp-screen-sharing && npm run cp-text-chat && npm run cp-logging && npm run cp-core"
   },
   "author": "adrice727@gmail.com",
   "license": "MIT",
@@ -31,6 +31,8 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0"
   }
 }
