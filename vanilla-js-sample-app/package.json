@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "cp-annotation": "ncp node_modules/opentok-annotation/dist/opentok-annotation.js public/js/components/",
-    "cp-archiving": "ncp node_modules/opentok-archiving/dist/opentok-archiving.js public/js/components/",
-    "cp-screen-sharing": "ncp node_modules/opentok-screen-sharing/dist/opentok-screen-sharing.js public/js/components/",
-    "cp-text-chat": "ncp node_modules/opentok-text-chat/dist/opentok-text-chat.js public/js/components/",
-    "cp-logging": "ncp node_modules/opentok-solutions-logging/dist/opentok-solutions-logging.js public/js/components/",
-    "cp-core": "ncp node_modules/opentok-accelerator-core/browser/opentok-acc-core.js public/js/components/",
+    "cp-annotation": "ncp node_modules/opentok-annotation/dist/opentok-annotation.js public/js/components/opentok-annotation.js",
+    "cp-archiving": "ncp node_modules/opentok-archiving/dist/opentok-archiving.js public/js/components/opentok-archiving.js",
+    "cp-screen-sharing": "ncp node_modules/opentok-screen-sharing/dist/opentok-screen-sharing.js public/js/components/opentok-screen-sharing.js",
+    "cp-text-chat": "ncp node_modules/opentok-text-chat/dist/opentok-text-chat.js public/js/components/opentok-text-chat.js",
+    "cp-logging": "ncp node_modules/opentok-solutions-logging/dist/opentok-solutions-logging.js public/js/components/opentok-solutions-logging.js",
+    "cp-core": "ncp node_modules/opentok-accelerator-core/browser/opentok-acc-core.js public/js/components/opentok-acc-core.js",
     "build": "mkdirp public/js/components && npm run cp-annotation && npm run cp-archiving && npm run cp-screen-sharing && npm run cp-text-chat && npm run cp-logging && npm run cp-core"
   },
   "author": "adrice727@gmail.com",
