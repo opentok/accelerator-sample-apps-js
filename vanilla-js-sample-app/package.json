@@ -22,7 +22,7 @@
     "opentok-accelerator-core": ">=2.0.0",
     "opentok-annotation": "*",
     "opentok-archiving": "*",
-    "opentok-screen-sharing": "*",
+    "opentok-screen-sharing": ">=1.0.28",
     "opentok-solutions-css": "*",
     "opentok-text-chat": "*"
   },
