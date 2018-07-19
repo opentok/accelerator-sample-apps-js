@@ -33,7 +33,7 @@ const otCoreOptions = {
   controlsContainer: '#controls',
   packages: ['textChat', 'screenSharing', 'annotation'],
   communication: {
-    callProperites: null, // Using default
+    callProperties: null, // Using default
   },
   textChat: {
     name: ['David', 'Paul', 'Emma', 'George', 'Amanda'][Math.random() * 5 | 0], // eslint-disable-line no-bitwise
