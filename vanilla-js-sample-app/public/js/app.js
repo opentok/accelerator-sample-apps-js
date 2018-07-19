@@ -3,6 +3,7 @@
 let otCore;
 const options = {
   // A container can either be a query selector or an HTMLElement
+  // eslint-disable-next-line no-unused-vars
   streamContainers: function streamContainers(pubSub, type, data) {
     return {
       publisher: {
@@ -18,7 +19,7 @@ const options = {
   controlsContainer: '#controls',
   packages: ['textChat', 'screenSharing', 'annotation', 'archiving'],
   communication: {
-    callProperites: null, // Using default
+    callProperties: null, // Using default
   },
   textChat: {
     name: ['David', 'Paul', 'Emma', 'George', 'Amanda'][Math.random() * 5 | 0], // eslint-disable-line no-bitwise
@@ -42,7 +43,7 @@ const options = {
 };
 
 /** Application Logic */
-const app = () => {
+const app = function() {
   const state = {
     connected: false,
     active: false,
@@ -114,7 +115,7 @@ const app = () => {
   /**
    * Update the state and UI
    */
-  const updateState = (updates) => {
+  const updateState = function(updates) {
     Object.assign(state, updates);
     Object.keys(updates).forEach(update => updateUI(update));
   };
@@ -122,17 +123,17 @@ const app = () => {
   /**
    * Start publishing video/audio and subscribe to streams
    */
-  const startCall = () => {
+  const startCall = function() {
     otCore.startCall()
-      .then(({ publishers, subscribers, meta }) => {
+      .then(function({ publishers, subscribers, meta }) {
         updateState({ publishers, subscribers, meta, active: true });
-      }).catch(error => console.log(error));
+      }).catch(function(error) { console.log(error); });
   };
 
   /**
    * Toggle publishing local audio
    */
-  const toggleLocalAudio = () => {
+  const toggleLocalAudio = function() {
     const enabled = state.localAudioEnabled;
     otCore.toggleLocalAudio(!enabled);
     updateState({ localAudioEnabled: !enabled });
@@ -143,7 +144,7 @@ const app = () => {
   /**
    * Toggle publishing local video
    */
-  const toggleLocalVideo = () => {
+  const toggleLocalVideo = function() {
     const enabled = state.localVideoEnabled;
     otCore.toggleLocalVideo(!enabled);
     updateState({ localVideoEnabled: !enabled });
@@ -154,7 +155,7 @@ const app = () => {
   /**
    * Subscribe to otCore and UI events
    */
-  const createEventListeners = () => {
+  const createEventListeners = function() {
     const events = [
       'subscribeToCamera',
       'unsubscribeFromCamera',
@@ -175,9 +176,9 @@ const app = () => {
   /**
    * Initialize otCore, connect to the session, and listen to events
    */
-  const init = () => {
+  const init = function() {
     otCore = new AccCore(options);
-    otCore.connect().then(() => updateState({ connected: true }));
+    otCore.connect().then(function() { updateState({ connected: true }); });
     createEventListeners();
   };
 

@@ -8,7 +8,12 @@
     "rules": {
         "no-confusing-arrow": 1,
         "no-unused-expressions": 1,
-        "no-prototype-builtins": 1
+        "no-prototype-builtins": 1,
+        "space-before-function-paren": [2, "never"],
+        "prefer-arrow-callback": 0,
+        "func-names": 0,
+        "no-console": 0,
+        "func-style": ["error", "expression"]
     },
     "globals": {
         "OT": true
