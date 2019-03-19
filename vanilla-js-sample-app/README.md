@@ -22,4 +22,5 @@ $ node server.js
 ```
 
 The main JavaScript source file for the app is src/app.js. The build script uses
-[webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) to transpile code.
+[webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) to transpile code
+for Internet Explorer support.

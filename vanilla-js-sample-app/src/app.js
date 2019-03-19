@@ -108,7 +108,7 @@ const app = function() {
         updateVideoContainers();
         break;
       default:
-        console.log('nothing to do, nowhere to go');
+        // No default action.
     }
   };
 
