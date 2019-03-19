@@ -2,3 +2,5 @@ node_modules
 npm-debug.log
 config.json
 .DS_Store
+
+vanilla-js-sample-app/public/js/app.js
