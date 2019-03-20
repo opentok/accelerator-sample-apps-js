@@ -166,7 +166,7 @@ body {
 }
 
 .App-video-container .video-container.hidden {
-    display: block;
+    z-index: 0;
 }
 
 .App-video-container .video-container.active-gt2 {
@@ -178,7 +178,7 @@ body {
 }
 
 .App-video-container .video-container.active-gt2.hidden {
-   display: block;
+    z-index: 0;
 }
 
 .App-video-container .video-container.active-gt2 .OT_subscriber {
