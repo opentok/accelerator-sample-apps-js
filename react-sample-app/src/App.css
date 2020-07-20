@@ -47,7 +47,7 @@ body {
 }
 
 .App-control-container.hidden {
-    display: none;
+    display: hidden;
 }
 
 .App-control-container .ots-video-control {
@@ -98,7 +98,10 @@ body {
 .App-mask {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
     color: white;
     background: rgba(27, 134, 144, 0.4);
     display: flex;
@@ -139,6 +142,10 @@ body {
 .App-video-container .video-container {
     width: 100%;
     height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
     display: flex;
 }
 
@@ -146,6 +153,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    left: auto;
     width: 160px;
     height: 96px;
     border: 1px solid #fcba00;
@@ -158,7 +166,7 @@ body {
 }
 
 .App-video-container .video-container.hidden {
-    display: none;
+    z-index: 0;
 }
 
 .App-video-container .video-container.active-gt2 {
@@ -170,7 +178,7 @@ body {
 }
 
 .App-video-container .video-container.active-gt2.hidden {
-   display: none;
+    z-index: 0;
 }
 
 .App-video-container .video-container.active-gt2 .OT_subscriber {

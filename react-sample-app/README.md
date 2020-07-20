@@ -21,11 +21,16 @@ Add a `config.json` file with your OpenTok credentials to the `src` directory:
 
 ### Deploying and running the app
 
-This sample application was built with [Create React App](https://github.com/facebookincubator/create-react-app) and uses [webpack](https://webpack.github.io/) to transpile code.
 ```javascript
 $ npm install
 $ npm run start
 ```
+
+This sample application was built with
+[Create React App](https://github.com/facebookincubator/create-react-app).
+The main JavaScript source file for the app is src/app.js. The build script uses
+[webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) to transpile code
+for Internet Explorer support.
 
 ----------
 

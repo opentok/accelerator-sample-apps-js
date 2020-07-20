@@ -108,7 +108,7 @@ const app = function() {
         updateVideoContainers();
         break;
       default:
-        console.log('nothing to do, nowhere to go');
+        // No default action.
     }
   };
 
@@ -124,6 +124,7 @@ const app = function() {
    * Start publishing video/audio and subscribe to streams
    */
   const startCall = function() {
+    updateState({ active: true });
     otCore.startCall()
       .then(function({ publishers, subscribers, meta }) {
         updateState({ publishers, subscribers, meta, active: true });
