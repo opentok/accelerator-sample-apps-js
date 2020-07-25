@@ -1,6 +1,7 @@
 ## JavaScript Sample Application
 
 Add your OpenTok credentials to the `options` hash in  `app.js`:
+
 ```javascript
 const options = {
 credentials: {
@@ -12,8 +13,9 @@ credentials: {
 ```
 
 To run:
-```javascript
-$ npm install
-$ npm run build
-$ node server.js
+
+```bash
+npm install
+npm run build
+node server.js
 ```
