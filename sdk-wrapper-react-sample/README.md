@@ -1,6 +1,7 @@
 ## React Sample Application
 
 Add a `credentials.json` file with your OpenTok credentials to the `src` directory:
+
 ```javascript
 {
   "apiKey": "YOUR_API_KEY",
@@ -9,9 +10,9 @@ Add a `credentials.json` file with your OpenTok credentials to the `src` directo
 }
 ```
 
-
 To run:
-```javascript
-$ npm install
-$ npm run start
+
+```bash
+npm install
+npm run start
 ```
