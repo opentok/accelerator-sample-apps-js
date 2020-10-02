@@ -22,7 +22,7 @@ body {
   -webkit-animation: react-spinner_spin 1.2s linear infinite;
   -moz-animation: react-spinner_spin 1.2s linear infinite;
   animation: react-spinner_spin 1.2s linear infinite;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: white;
   position: absolute;
   width: 20%;
