@@ -19,7 +19,7 @@ app.use(bodyParser.json());
  */
 
 app.get('/', (req, res) => {
-  res.sendfile('public/index.html');
+  res.sendFile('public/index.html');
 });
 
 /*
