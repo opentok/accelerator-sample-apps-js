@@ -19,11 +19,12 @@ app.use(bodyParser.json());
  */
 
 app.get('/', (req, res) => {
-  res.sendfile('public/index.html');
+  res.sendFile('public/index.html');
 });
 
 /*
  * Listen
  */
-app.listen(process.env.PORT || port);
-console.log(`app listening on port ${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`app listening on port ${port}`);
+});
