@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "opentok-accelerator-core": ">=2.0.0",
+    "opentok-accelerator-core": ">=2.0.21",
     "opentok-annotation": "*",
     "opentok-archiving": "*",
     "opentok-screen-sharing": ">=1.0.28",
