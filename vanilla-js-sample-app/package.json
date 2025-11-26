@@ -17,7 +17,7 @@
   "author": "adrice727@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.16.0",
+    "body-parser": "^2.2.1",
     "express": "^4.14.1",
     "opentok-accelerator-core": ">=2.0.0",
     "opentok-annotation": "*",
