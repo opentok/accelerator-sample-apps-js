@@ -2,6 +2,8 @@
 
 <img src="https://assets.tokbox.com/img/vonage/Vonage_VideoAPI_black.svg" height="48px" alt="Tokbox is now known as Vonage" />
 
+> ⚠️ This repository is deprecated and will not receive meaningful updates. For new projects and migrations, we recommend using the [Vonage Video React reference application](https://github.com/Vonage/vonage-video-react-app).
+
 ## Introduction
 
 In this repository there are three example applications demonstrating how to use [opentok-accelerator-core-js](https://github.com/opentok/accelerator-core-js):
